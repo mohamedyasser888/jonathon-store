@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magical Ticket</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Papyrus', fantasy;
+      background: url("jonathon.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Dark overlay */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    /* Centered magical box */
+    .login-box {
+      position: relative;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid gold;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+      color: gold;
+      box-shadow: 0 0 20px gold;
+      width: 320px;
+    }
+
+    .login-box h1 {
+      margin-bottom: 25px;
+      text-shadow: 2px 2px 10px black, 0 0 10px gold;
+      font-size: 26px;
+    }
+
+    .login-box input {
+      display: block;
+      margin: 15px auto;
+      padding: 12px;
+      width: 85%;
+      border: 2px solid gold;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.5);
+      color: gold;
+      font-size: 18px;
+      text-align: center;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .login-box input:focus {
+      box-shadow: 0 0 15px gold;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .login-box button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background: gold;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px gold;
+    }
+
+    .login-box button:hover {
+      background: orange;
+      box-shadow: 0 0 25px orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="login-box">
+    <h1>✨ Magical Login ✨</h1>
+    <input id="name" type="text" placeholder="Enter your name">
+    <input id="ticket" type="text" placeholder="Enter your ticket">
+    <button onclick="sendData()">Enter</button>
+  </div>
+
+  <script>
+    function sendData() {
+      const name = document.getElementById("name").value;
+      const ticket = document.getElementById("ticket").value;
+
+      if (!name || !ticket) {
+        alert("Please fill in both fields.");
+        return;
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbxFlbwZptxS6hzgGc5RUR6fyZh5AcscJ7h2S_wuZ_9Jzcx-Xn_rvwCnYKpGAuMV8poM/exec", {
+        method: "POST",
+        mode: "no-cors", 
+        body: JSON.stringify({ name, ticket }),
+        headers: { "Content-Type": "application/json" }
+      });
+
+      // Assume success
+      window.location.href = "surprise.html";
+    }
+  </script>
+</body>
+</html>
