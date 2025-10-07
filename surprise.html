@@ -2,17 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Surprise</title>
+  <title>Mystery Box</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       height: 100vh;
-      background: url("jonathon.png") no-repeat center center fixed;
+      font-family: 'Papyrus', fantasy;
+      background: url("U1_copy.png") no-repeat center top fixed;
       background-size: cover;
+      background-position: center -11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    nav {
+      position: absolute;
+      top: 15px;
+      display: flex;
+      gap: 15px;
+    }
+
+    nav button {
+      padding: 10px 25px;
+      font-size: 16px;
+      background: #1e90ff;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #1e90ff;
+    }
+
+    nav button:hover {
+      background: #4682b4;
+      box-shadow: 0 0 25px #4682b4;
+    }
+
+    .title {
+      z-index: 1;
+      font-size: 32px;
+      text-shadow: 0 0 15px #1e90ff, 0 0 25px #1e90ff;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .box-container {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 40px;
+    }
+
+    .box-container img {
+      width: 200px;
+      height: auto;
+      transition: transform 0.3s;
+      cursor: pointer;
+      border: 3px solid #1e90ff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #1e90ff;
+    }
+
+    .box-container img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #4682b4;
+    }
+
+    .galleon-buttons {
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .galleon-buttons button {
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #1e90ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px #1e90ff;
+    }
+
+    .galleon-buttons button:hover {
+      background: #4682b4;
+      box-shadow: 0 0 25px #4682b4;
     }
   </style>
 </head>
 <body>
+  <div class="overlay"></div>
+
+  <nav>
+    <button onclick="location.href='mysterybox.html'">Mystery Box</button>
+    <button onclick="location.href='game.html'">Game</button>
+  </nav>
+
+  <div class="title">✨ Welcome to Jonathon's Family Mystery Box ✨</div>
+
+  <div class="box-container">
+    <img src="mysterybox.png" alt="Mystery Box Left">
+    <img src="mysterybox.png" alt="Mystery Box Center">
+    <img src="mysterybox.png" alt="Mystery Box Right">
+  </div>
+
+  <div class="galleon-buttons">
+    <button>5 Galleon</button>
+    <button>20 Galleon</button>
+    <button>50 Galleon</button>
+  </div>
 </body>
 </html>
