@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Magical Ticket</title>
+  <title>Mystery Bbox</title>
   <style>
     body {
       margin: 0;
@@ -12,8 +12,11 @@
       align-items: center;
       justify-content: center;
       font-family: 'Papyrus', fantasy;
-      background: url("jonathon.png") no-repeat center center fixed;
+
+      /* Background image */
+      background: url("U1_copy.png") no-repeat center top fixed;
       background-size: cover;
+      background-position: center -11px; /* 👈 pushes image down by 80px */
     }
 
     /* Dark overlay */
@@ -32,19 +35,20 @@
       position: relative;
       z-index: 1;
       background: rgba(0, 0, 0, 0.7);
-      border: 2px solid gold;
+      border: 2px solid #1e90ff;
       border-radius: 15px;
       padding: 40px;
       text-align: center;
-      color: gold;
-      box-shadow: 0 0 20px gold;
+      color: white;
+      box-shadow: 0 0 20px #1e90ff;
       width: 320px;
     }
 
     .login-box h1 {
       margin-bottom: 25px;
-      text-shadow: 2px 2px 10px black, 0 0 10px gold;
-      font-size: 26px;
+      text-shadow: 2px 2px 10px black, 0 0 10px #1e90ff;
+      font-size: 28px;
+      color: white;
     }
 
     .login-box input {
@@ -52,37 +56,41 @@
       margin: 15px auto;
       padding: 12px;
       width: 85%;
-      border: 2px solid gold;
+      border: 2px solid #1e90ff;
       border-radius: 8px;
-      background: rgba(0, 0, 0, 0.5);
-      color: gold;
+      background: rgba(30, 144, 255, 0.8);
+      color: white;
       font-size: 18px;
       text-align: center;
       outline: none;
       transition: 0.3s;
     }
 
+    .login-box input::placeholder {
+      color: #e0e0e0;
+    }
+
     .login-box input:focus {
-      box-shadow: 0 0 15px gold;
-      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 0 15px #1e90ff;
+      background: rgba(30, 144, 255, 1);
     }
 
     .login-box button {
       margin-top: 20px;
       padding: 12px 25px;
       font-size: 18px;
-      background: gold;
-      color: black;
+      background: #1e90ff;
+      color: white;
       border: none;
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 0 15px gold;
+      box-shadow: 0 0 15px #1e90ff;
     }
 
     .login-box button:hover {
-      background: orange;
-      box-shadow: 0 0 25px orange;
+      background: #4682b4;
+      box-shadow: 0 0 25px #4682b4;
     }
   </style>
 </head>
@@ -90,7 +98,7 @@
   <div class="overlay"></div>
 
   <div class="login-box">
-    <h1>✨ Magical Login ✨</h1>
+    <h1>Mystery Box</h1>
     <input id="name" type="text" placeholder="Enter your name">
     <input id="ticket" type="text" placeholder="Enter your ticket">
     <button onclick="sendData()">Enter</button>
